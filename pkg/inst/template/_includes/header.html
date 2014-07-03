@@ -129,8 +129,12 @@ blockquote {
 
   <div class="wrap">
 
+  {% if site.data.pkg.headpic %}
+    <img src="{{ site.data.pkg.headpic }}" width="100%">
+  {% else %}
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.data.pkg.Package }}</a>
-
+  {% endif %}
+                  
     <nav class="site-nav">
       <div class="trigger">
         <a class="page-link" href="/">Home</a>
