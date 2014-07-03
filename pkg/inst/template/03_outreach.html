@@ -1,0 +1,33 @@
+---
+layout: page
+title: Outreach
+permalink: /outreach/
+---
+
+<div class="home">
+
+ <ul class="posts">
+     {% for paper in site.data.cites %}
+     {% if paper.gs %}
+     <li> <A HREF="http://scholar.google.de/scholar?oi=bibs&hl=en&cites={{ paper.gs }}">
+          Google Scholar citations</A> of 
+          {% if paper.doi %} 
+          <A HREF="http://dx.doi.org/{{ paper.doi }}">
+          {% endif %} 
+          {{ paper.journal }} ({{ paper.year }})
+          {% if paper.doi %} 
+          </A>
+          {% endif %}   
+          publication </li>
+     {% endif %}
+     {% endfor %}
+     </ul>
+                 
+
+   The following CRAN packages use package {{ site.data.pkg.Package }}:
+   <P>
+    {% for pkg in site.data.rdepends %}
+      <A HREF={{ pkg.url }}> {{ pkg.pkg }}</A>
+    {% endfor %}
+
+</div>
