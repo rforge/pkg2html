@@ -17,7 +17,12 @@ referring to the methodology:
           {% if paper.doi %} 
           <A HREF="http://dx.doi.org/{{ paper.doi }}">
           {% endif %} 
-          {{ paper.journal }} ({{ paper.year }})
+          {% if paper.journal %}
+            {{ paper.journal }} 
+          {% else %}
+            {{ paper.publisher }}
+          {% endif %}
+          ({{ paper.year }})
           {% if paper.doi %} 
           </A>
           {% endif %}   
