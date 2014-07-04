@@ -408,3 +408,33 @@ a:visited { color: #205caa; }
     margin: 0 0 15px; }
 
 }
+
+/* image galleries */
+/* from http://www.w3schools.com/css/css_image_gallery.asp */
+
+div.image {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #0000ff;
+    height: 25%;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+div.image img {
+    display: inline;
+    margin: 5px;
+    border: 1px solid #ffffff;
+}
+
+div.image a:hover img {
+    border:1px solid #0000ff;
+}
+
+div.desc {
+    text-align: center;
+    font-weight: normal;
+    width: 120px;
+    margin: 5px;
+}

@@ -6,11 +6,25 @@ permalink: /authors/
 
 <div class="home">
 
-  <ul class="posts">
-    {% for author in site.data.authors %}
-      <li> {{ author.name }} </li>
-    {% endfor %}
-  </ul>
+
+{% for author in site.data.authors %}
+  <div class="image">
+    {% if author.url %}
+      <a target="_blank" href="{{ author.url }}">
+    {% endif %}
+    {% if author.image %}
+      <img src="{{ author.image }}" alt="{{ author.name }}" height="25%">
+    {% else %}
+      <img src="/img/anonymous.png" alt="{{ author.name }}" height="25%">
+    {% endif %}
+    {% if author.url %}
+      </a>
+    {% endif %}
+    <div class="desc">{{ author.name }}</div>
+  </div>
+{% endfor %}
+
+<p>
 
   <h1>Maintainer</h1>
   

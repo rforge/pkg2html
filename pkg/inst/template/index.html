@@ -5,6 +5,16 @@ layout: default
 <div class="home">
 
   <h1>{{ site.data.pkg.Package }}: {{ site.data.pkg.Title }}<h1>
+
+  An add-on package to the <A HREF="http://www.R-project.org">R system for
+  statistical computing</A> distributed 
+  {% if site.data.pkg.License %}
+      under the {{ site.data.pkg.License }} License
+  {% endif %}
+  at the <A HREF="{{ site.data.pkg.Download }}">Comprehensive R Archive
+  Network</A>
+  
+  <h2>Description</h2>
   
   {{ site.data.pkg.Description }}
 

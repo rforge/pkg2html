@@ -45,11 +45,12 @@ desc2yaml <- function(pkg) {
     desc$Source <- paste("http://CRAN.R-project.org/src/contrib/", pkg, "_", 
                          desc$Version, ".tar.gz", sep = "")
     desc$Devel <- paste("https://r-forge.r-project.org/projects/", pkg, sep = "")
+    desc$License <- desc$License
 
     ### <FIXME> vignettes </FIXME>
 
     as.yaml(desc[c("Package", "Title", "Version", "Date", "Description", 
-                   "Download", "Manual", "Source", "Devel")])
+                   "Download", "Manual", "Source", "Devel", "License")])
 }
 
 
