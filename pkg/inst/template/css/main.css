@@ -169,7 +169,7 @@ a:visited { color: #205caa; }
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-  font-size: 42px;
+  font-size: 35px;
   letter-spacing: -1.75px;
   line-height: 1;
   font-weight: 300;
@@ -415,7 +415,7 @@ a:visited { color: #205caa; }
 div.image {
     margin: 5px;
     padding: 5px;
-    border: 1px solid #0000ff;
+    /* border: 1px solid #0000ff; */
     height: 25%;
     width: auto;
     float: left;
@@ -425,11 +425,12 @@ div.image {
 div.image img {
     display: inline;
     margin: 5px;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
 }
 
 div.image a:hover img {
-    border:1px solid #0000ff;
+    /* border:1px solid #0000ff; */
+    height: 27%
 }
 
 div.desc {

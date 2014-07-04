@@ -8,7 +8,7 @@ permalink: /outreach/
 
 Papers reporting results based on package {{ site.data.pkg.Package }} or papers
 referring to the methodology:
-<P>
+<P><P>
  <ul class="posts">
      {% for paper in site.data.cites %}
      {% if paper.gs %}
@@ -28,7 +28,7 @@ referring to the methodology:
                  
 
    The following CRAN packages use package {{ site.data.pkg.Package }}:
-   <P>
+   <P><P>
     {% for pkg in site.data.rdepends %}
       <A HREF={{ pkg.url }}> {{ pkg.pkg }}</A>
     {% endfor %}
