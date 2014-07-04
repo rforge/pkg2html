@@ -6,6 +6,13 @@ permalink: /authors/
 
 <div class="home">
 
+Package {{ site.data.pkg.Package }} is maintained by 
+{% for maintainer in site.data.maintainer %}
+{{ maintainer.name }}; 
+{% endfor %}
+please send questions, suggestions, corrections to the maintainer only.
+
+<p>
 
 {% for author in site.data.authors %}
   <div class="image">
@@ -24,14 +31,4 @@ permalink: /authors/
   </div>
 {% endfor %}
 
-<p>
-
-  <h1>Maintainer</h1>
-  
-  <ul class="posts">
-      {% for author in site.data.maintainer %}
-      <li> {{ author.name }} </li>
-      {% endfor %}
-  </ul>
-                  
 </div>
