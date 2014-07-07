@@ -79,7 +79,7 @@ NEWS2md <- function(pkg) {
     }
 }
 
-depends2yaml <- function(pkg, field = c("Depends", "Imports")) {
+depends2yaml <- function(pkg, field = c("Depends", "Imports", "Suggests")) {
 
     x <- available.packages(contriburl = contrib.url("http://cran.at.r-project.org"))
 
