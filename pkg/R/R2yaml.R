@@ -31,6 +31,7 @@ person2yaml <- function(x) {
             name <- format(r, include = c("given", "family"))
             r <- unclass(r)
             r[[1]]$name <- name
+            r[[1]]$email <- gsub("@", "_@_", r[[1]]$email)
             r[[1]][c("name", names(r[[1]])[names(r[[1]]) != "name"])]	
         })
     as.yaml(rval)

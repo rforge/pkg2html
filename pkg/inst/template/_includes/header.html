@@ -14,7 +14,7 @@ hljs.initHighlightingOnLoad();
   <div class="wrap">
 
   {% if site.data.pkg.headpic %}
-    <img src="{{ site.data.pkg.headpic }}">
+    <img src="{{ site.data.pkg.headpic | prepend: site.baseurl }} ">
   {% else %}
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.data.pkg.Package }}</a>
   {% endif %}
