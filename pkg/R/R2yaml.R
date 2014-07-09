@@ -70,10 +70,20 @@ NEWS2md <- function(pkg) {
                  paste("title:  Version", v),
                  paste("date: ", unique(tmp$Date)),
                  "---",
-                 "",
-                 "<ul>",
-                 paste("<li>", tmp$Text, "</li>"),
-                 "</ul>")
+                 "")
+        if (all(is.na(tmp$Category))) {
+            txt <- c(txt, "<ul>",
+                          paste("<li>", tmp$Text, "</li>"),
+                          "</ul>")
+        } else {
+            for (ct in unique(tmp$Category)) {
+                tmpp <- subset(tmp, Category == ct)
+                txt <- c(txt, paste("<h2>", ct, "</h2>", sep = ""),
+                              "<ul>",
+                              paste("<li>", tmpp$Text, "</li>"),
+                              "</ul>")
+            }
+        }
 
         writeLines(txt, con = paste(unique(tmp$Date), "-", v, ".html", sep = ""))
 
