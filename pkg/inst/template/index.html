@@ -18,4 +18,11 @@ layout: default
   
   {{ site.data.pkg.Description }}
 
+  <h2>Introductory Texts</h2>
+  
+  <ul>
+  {% for vig in site.data.vignette %}
+    <li><A HREF="{{ vig.url }}">{{ vig.title }}</A></li>
+  {% endfor %}
+  </ul>
 </div>

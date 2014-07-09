@@ -37,10 +37,22 @@ person2yaml <- function(x) {
     as.yaml(rval)
 }
 
+vignette2yaml <- function(pkg) {
+    vig <- tools:::getVignetteInfo("party", NULL, all = TRUE)
+    rval <- lapply(1:nrow(vig), function(i) {
+        r <- list(title = vig[i,"Title"], 
+                  url = paste("http://CRAN.R-project.org/web/packages/", 
+                              pkg, "/vignettes/", vig[i,"PDF"], sep = ""))
+        r
+    })
+    as.yaml(rval)
+        
+}
+
 desc2yaml <- function(pkg) {
 
     desc <- packageDescription(pkg)
-    desc$Download <- paste("http://CRAN.R-project.org/package=", pkg, sep = "")
+    desc$CRAN <- paste("http://CRAN.R-project.org/package=", pkg, sep = "")
     desc$Manual <- paste("http://CRAN.R-project.org/web/packages/", 
                          pkg, "/", pkg, ".pdf", sep = "")
     desc$Source <- paste("http://CRAN.R-project.org/src/contrib/", pkg, "_", 
@@ -51,7 +63,7 @@ desc2yaml <- function(pkg) {
     ### <FIXME> vignettes </FIXME>
 
     as.yaml(desc[c("Package", "Title", "Version", "Date", "Description", 
-                   "Download", "Manual", "Source", "Devel", "License")])
+                   "CRAN", "Manual", "Source", "Devel", "License")])
 }
 
 
@@ -114,5 +126,6 @@ R2yaml <- function(pkg) {
     writeLines(person2yaml(.authors(pkg)), con = "authors.yml")
     writeLines(person2yaml(.maintainer(pkg)), con = "maintainer.yml")
     writeLines(depends2yaml(pkg), con = "rdepends.yml")
+    writeLines(vignette2yaml(pkg), con = "vignette.yml")
 
 }
